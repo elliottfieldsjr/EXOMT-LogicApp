@@ -1,0 +1,30 @@
+{
+    "serviceProviderConnections": {
+        "keyVault": {
+            "parameterValues": {
+                "VaultUri": "@appsetting('keyVault_VaultUri')",
+                    "authProvider": {
+                        "Type": "ManagedServiceIdentity"
+                    }
+            },
+            "serviceProvider": {
+                "id": "/serviceProviders/keyVault"
+            },
+            "displayName": "Connection-to-KeyVault"
+        }
+    },
+    "managedApiConnections": {
+        "azureloganalyticsdatacollector": {
+            "api": {
+                "id": "@appsetting('AZUREMONITOR_API_ID')"
+            },
+            "connection": {
+                "id": "@appsetting('AZUREMONITOR_CONNECTION_ID')"
+            },
+            "connectionRuntimeUrl": "@appsetting('CONNECTION_RUNTIME_URL')",
+            "authentication": {
+                "type": "ManagedServiceIdentity"
+            }
+        }
+    }
+}
